@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 function Square(props) {
-  console.log("Squqre" + props);
   return (
     <button
       className="square"
@@ -28,7 +27,6 @@ class Board extends React.Component {
   }
 
   render() {
-    console.log("Board" + this.props);
     return (
       <div>
         <div className="board-row">
