@@ -20,7 +20,6 @@ class Board extends React.Component {
     return (
       <Square
         value={this.props.squares[i]}
-        // onCLickには(i) => this.handleClick(i)というアロー関数が入っている
         onClick={() => this.props.onClick(i)}
       />
     );
@@ -101,7 +100,6 @@ class Game extends React.Component {
         <div className="game-board">
           <Board
             squares={current.squares}
-            // onCLickには(i) => this.handleClick(i)というアロー関数が入っている
             onClick={(i) => this.handleClick(i)}
           />
         </div>
