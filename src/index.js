@@ -88,6 +88,7 @@ class Game extends React.Component {
       xIsNext: step % 2 === 0,
     });
   }
+
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
@@ -102,12 +103,18 @@ class Game extends React.Component {
         </li>
       );
     });
+    if (!this.state.movesOrder) moves.reverse();
     let status;
     if (winner) {
       status = "Winner" + winner;
     } else {
       status = "Nextplayer" + (this.state.xIsNext ? "X" : "O");
     }
+    const toggleOrder = () => {
+      this.setState({
+        movesOrder: !this.state.movesOrder,
+      });
+    };
     return (
       <div className="game">
         <div className="game-board">
@@ -118,7 +125,7 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <button>ASK/DESC</button>
+          <button onClick={toggleOrder}>ASK/DESC</button>
           <ol>{moves}</ol>
         </div>
       </div>
