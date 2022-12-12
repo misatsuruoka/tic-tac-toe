@@ -150,7 +150,12 @@ function calculateWinner(squares) {
       return squares[a];
     }
   }
-  return null;
+
+  if (squares.indexOf(null) === -1) {
+    return "withdraw";
+  } else {
+    return null;
+  }
 }
 
 // ========================================
