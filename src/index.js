@@ -55,6 +55,7 @@ class Game extends React.Component {
       history: [
         {
           squares: Array(9).fill(null),
+          putState: "(0,0)",
         },
       ],
       stepNumber: 0,
