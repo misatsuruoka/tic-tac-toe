@@ -75,6 +75,7 @@ class Game extends React.Component {
       history: history.concat([
         {
           squares: squares,
+          putState: `(${(i % 3) + 1}, ${i / 3 + 1})`,
         },
       ]),
       stepNumber: history.length,
